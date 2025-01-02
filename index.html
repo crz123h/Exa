@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>إكسا</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background: #000; /* خلفية احتياطية */
+            background-image: url("logo.jpg");
+            background-size: cover; /* تغطية الصفحة بالكامل */
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* تغطية الشاشة بالكامل */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            color: #ffd700; /* اللون الأصفر للنصوص */
+            text-align: center;
+        }
+
+        /* اسم الموقع */
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6); /* خلفية شفافة */
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffd700; /* اللون الأصفر */
+        }
+
+        /* النصوص الثابتة */
+        .static-text {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        /* النص المتحرك */
+        .animated-text-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin-top: 15px; /* تم رفع النص المتحرك للأعلى */
+        }
+
+        .animated-text {
+            display: inline-block;
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(to right, #ff5722, #ffeb3b, #4caf50, #2196f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: scrollText 10s linear infinite;
+        }
+
+        @keyframes scrollText {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* زر القائمة الجانبية */
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #ffd700;
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1500;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            transition: left 0.3s ease-in-out;
+            z-index: 1400;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .side-menu ul li {
+            margin: 20px 0;
+        }
+
+        .side-menu ul li a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            transition: background-color 0.3s;
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+        }
+
+        .side-menu ul li a:hover {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+        .side-menu.active {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- اسم الموقع -->
+    <header>إكسا</header>
+
+    <!-- النصوص الثابتة -->
+    <div class="static-text">مؤسسة إكسا</div>
+
+    <!-- النص المتحرك -->
+    <div class="animated-text-container">
+        <div class="animated-text">تصاميم فريدة | جودة عالية | خبرة استثنائية | خدمات متكاملة</div>
+    </div>
+
+    <!-- زر القائمة الجانبية -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="side-menu" id="side-menu">
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="our-works.html">أعمالنا</a></li>
+            <li><a href="about.html">عنا</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
