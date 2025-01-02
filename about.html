@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>عنا - إكسا</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background: url('ss.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+
+        /* شعار النص */
+        .logo {
+            font-size: 60px;
+            font-weight: bold;
+            color: #f1c40f;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* نصوص المؤسسة */
+        .header {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 20px;
+            color: #fff;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            max-width: 800px;
+            overflow-y: auto;
+            max-height: 60vh;
+        }
+
+        /* زر تواصل مع خبرائنا */
+        .contact-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #000;
+            background-color: #f1c40f;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .contact-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        /* زر القائمة الجانبية */
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #f1c40f;
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1500;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            transition: left 0.3s ease-in-out;
+            z-index: 1400;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .side-menu ul li {
+            margin: 20px 0;
+        }
+
+        .side-menu ul li a {
+            color: #f1c40f;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            transition: background-color 0.3s;
+            border: 1px solid #f1c40f;
+            border-radius: 5px;
+        }
+
+        .side-menu ul li a:hover {
+            background-color: #f1c40f;
+            color: #000;
+        }
+
+        .side-menu.active {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- شعار النص -->
+    <div class="logo">إكسا</div>
+
+    <!-- نصوص المؤسسة -->
+    <div class="header">عنا</div>
+    <div class="description">
+        في إكسا، نقدم حلولًا مبتكرة وشاملة لجميع أنواع الديكورات الداخلية والخارجية، بما يناسب احتياجاتك وتطلعاتك. خدماتنا تتضمن: <br><br>
+
+        <strong>1. ديكورات GRC (الأسمنت الممزوج بالألياف الزجاجية):</strong> <br>
+        - تصميم وتنفيذ واجهات خارجية تعكس الطابع الفاخر والحديث. <br>
+        - استخدام GRC في الأعمدة، الكرانيش، والأقواس، لإضفاء لمسة جمالية مميزة. <br>
+        - تنفيذ ديكورات داخلية باستخدام GRC مثل الأحواض والنوافير بعناية ودقة. <br><br>
+
+        <strong>2. الديكورات الداخلية:</strong> <br>
+        - تصميم أسقف مميزة باستخدام الجبس بورد والإضاءة المدمجة لإضافة عمق وجمالية للمساحات. <br>
+        - زخرفة الجدران باستخدام ورق الحائط، الدهانات المزخرفة، والبلاطات ثلاثية الأبعاد. <br>
+        - تصميم المساحات الداخلية بعناية لتحقيق توازن بين الجمال والوظيفة. <br><br>
+
+        <strong>3. الديكورات الخارجية:</strong> <br>
+        - تصميم الحدائق الخارجية باستخدام الإنارة الأرضية والنوافير الجمالية. <br>
+        - تحسين المداخل باستخدام الحجر الطبيعي والبلاطات المميزة. <br>
+        - تجهيز البرجولات والشرفات بأحدث الأساليب العصرية التي تعكس الفخامة والراحة. <br><br>
+
+        <strong>4. الإضاءة:</strong> <br>
+        - تركيب إضاءة داخلية مدمجة في الأسقف والجدران لتوفير أجواء دافئة ومريحة. <br>
+        - تصميم إضاءة خارجية لإبراز جمال واجهات المباني والحدائق ليلاً. <br><br>
+
+        <strong>5. الأثاث المخصص:</strong> <br>
+        - تصميم وتنفيذ أثاث مخصص يناسب كل مساحة بشكل فريد. <br>
+        - استخدام مواد ذات جودة عالية تجمع بين الأناقة والمتانة. <br><br>
+
+        <strong>6. التجديد وإعادة التصميم:</strong> <br>
+        - تحويل المساحات القديمة إلى أماكن حديثة تتماشى مع أحدث صيحات التصميم. <br>
+        - تحسين التفاصيل الصغيرة مثل الأبواب، النوافذ، والتشطيبات النهائية. <br><br>
+
+        <strong>لماذا تختار إكسا؟</strong> <br>
+        في إكسا، نحرص على تقديم تصاميم تعكس شخصيتك وتعزز من قيمة المكان. فريقنا من المحترفين يعمل على تحقيق رؤيتك باستخدام أفضل المواد وأحدث التقنيات. نلتزم دائمًا بالجودة العالية، الدقة في التنفيذ، وتسليم المشاريع في الوقت المحدد.
+    </div>
+    
+    <!-- زر تواصل مع خبرائنا -->
+    <a href="contact.html" class="contact-button">تواصل مع خبرائنا</a>
+
+    <!-- زر القائمة الجانبية -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="side-menu" id="side-menu">
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="our-works.html">أعمالنا</a></li>
+            <li><a href="about.html">عنا</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
