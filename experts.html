@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>تواصل مع خبير - إكسا</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            color: #ffd700; /* لون النصوص */
+            text-align: center;
+            background-color: #1a1a1a;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* خلفية الصورة */
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('ss.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* خلف جميع العناصر */
+            opacity: 0.7;
+        }
+
+        /* النصوص الثابتة */
+        .static-text {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* النص المتحرك */
+        .animated-text-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin-top: 15px;
+        }
+
+        .animated-text {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(to right, #ff5722, #ffeb3b, #4caf50, #2196f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: scrollText 10s linear infinite;
+        }
+
+        @keyframes scrollText {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* زر القائمة الجانبية */
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #ffd700;
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1500;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            transition: left 0.3s ease-in-out;
+            z-index: 1400;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .side-menu ul li {
+            margin: 20px 0;
+        }
+
+        .side-menu ul li a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            transition: background-color 0.3s;
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+        }
+
+        .side-menu ul li a:hover {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+        .side-menu.active {
+            left: 0;
+        }
+
+        /* روابط التواصل الاجتماعي */
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+        }
+
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        /* نص حقوق الطبع */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #ffd700;
+            color: #000;
+            margin-top: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* تنسيق صور الخبراء */
+        .expert-card {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            margin: 20px 0;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            margin-top: 40px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .expert-card img {
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 2px solid #ffd700;
+        }
+
+        .expert-info {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .expert-info h3 {
+            margin: 0;
+            font-size: 24px;
+            color: #ffd700;
+        }
+
+        .expert-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- خلفية الصورة -->
+    <div class="background-image"></div>
+
+    <!-- النصوص الثابتة -->
+    <div class="static-text">تواصل مع خبير</div>
+    <div class="animated-text-container">
+        <div class="animated-text">أحدث التصاميم | استشارات احترافية | خبراء في مجال الديكور</div>
+    </div>
+
+    <!-- زر القائمة الجانبية -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="side-menu" id="side-menu">
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="our-works.html">أعمالنا</a></li>
+            <li><a href="about.html">عنا</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+    </div>
+
+    <!-- محتوى الصفحة -->
+    <div class="expert-card">
+        <img src="1s.jpg" alt="خبير ديكور ذيزن الهردي">
+        <div class="expert-info">
+            <h3>خبير الديكور: ذيزن الهردي</h3>
+            <p>رقم الهاتف: 775592078</p>
+        </div>
+    </div>
+
+    <div class="expert-card">
+        <img src="2s.jpg" alt="خبير السراميك صالح الزراري">
+        <div class="expert-info">
+            <h3>خبير السراميك: صالح الزراري</h3>
+            <p>رقم الهاتف: 770709064</p>
+        </div>
+    </div>
+
+    <div class="expert-card">
+        <img src="3s.jpg" alt="مدير المقاولات والمهندس ربيع الزراري">
+        <div class="expert-info">
+            <h3>مدير المقاولات: ربيع الزراري</h3>
+            <p>رقم الهاتف: 777777777</p>
+        </div>
+    </div>
+
+    <div class="expert-card">
+        <img src="4s.jpg" alt="خبير ديكور وجبس أكرم الزراري">
+        <div class="expert-info">
+            <h3>خبير ديكور وجبس: أكرم الزراري</h3>
+            <p>رقم الهاتف: 773346249</p>
+        </div>
+    </div>
+
+    <!-- روابط التواصل الاجتماعي في الأسفل -->
+    <div class="social-links">
+        <h3>تواصل معنا عبر وسائل التواصل الاجتماعي</h3>
+        <a href="https://facebook.com/fakeprofile" target="_blank">
+            <img src="facebook.jpg" alt="فيسبوك">
+        </a>
+        <a href="https://instagram.com/fakeprofile" target="_blank">
+            <img src="instagram.jpg" alt="إنستغرام">
+        </a>
+        <a href="https://twitter.com/fakeprofile" target="_blank">
+            <img src="twitter.jpg" alt="تويتر">
+        </a>
+    </div>
+
+    <footer>
+        <p>© 2025 جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var sideMenu = document.getElementById("side-menu");
+            sideMenu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
